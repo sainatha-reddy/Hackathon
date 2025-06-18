@@ -6,7 +6,7 @@ const CallToAction = () => {
   const handleDownloadBrochure = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = 'public/IIITDM-HACKS_SponsDeck-updated.pdf';
+    link.href = '/IIITDM-HACKS_SponsDeck-updated.pdf';
     link.download = 'TechInnovate2024_Brochure.pdf';
     document.body.appendChild(link);
     link.click();
