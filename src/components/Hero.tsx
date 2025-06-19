@@ -39,11 +39,11 @@ const Hero = () => {
   }, [eventDate]);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen bg-midnight flex items-center justify-center relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-emerald-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-glow rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
@@ -52,16 +52,16 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary mb-6 leading-tight">
             Tech
-            <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="text-glow">
               Innovate
             </span>
             <br />
             2025
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-text/80 mb-12 max-w-3xl mx-auto">
             Where brilliant minds converge to shape the future of technology. 
             36 hours of innovation, collaboration, and breakthrough solutions.
           </p>
@@ -72,11 +72,11 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-12 border border-white/20"
+          className="bg-midnight/80 backdrop-blur-md rounded-2xl p-8 mb-12 border border-glow/40"
         >
           <div className="flex items-center justify-center mb-6">
-            <Clock className="w-6 h-6 text-emerald-400 mr-2" />
-            <h3 className="text-2xl font-semibold text-white">Event Starts In</h3>
+            <Clock className="w-6 h-6 text-primary mr-2" />
+            <h3 className="text-2xl font-semibold text-primary">Event Starts In</h3>
           </div>
           
           <div className="grid grid-cols-4 gap-4 max-w-md mx-auto">
@@ -91,12 +91,12 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className="bg-gradient-to-b from-emerald-500/20 to-cyan-500/20 rounded-xl p-4 border border-white/10"
+                className="bg-midnight border border-primary/30 rounded-xl p-4"
               >
-                <div className="text-3xl font-bold text-white mb-1">
+                <div className="text-3xl font-bold text-primary mb-1">
                   {item.value.toString().padStart(2, '0')}
                 </div>
-                <div className="text-sm text-gray-300">{item.label}</div>
+                <div className="text-sm text-text/80">{item.label}</div>
               </motion.div>
             ))}
           </div>
@@ -106,9 +106,9 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex items-center justify-center text-gray-400"
+          className="flex items-center justify-center text-glow"
         >
-          <Calendar className="w-5 h-5 mr-2" />
+          <Calendar className="w-5 h-5 mr-2 text-primary" />
           <span>December 1, 2025 | Tech Innovation Center</span>
         </motion.div>
       </div>

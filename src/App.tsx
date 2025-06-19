@@ -6,7 +6,7 @@ import PastEvents from './components/PastEvents';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-midnight text-text">
       <Hero />
       <PrizePool />
       <CallToAction />
