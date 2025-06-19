@@ -2,6 +2,29 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Lightbulb, Code, Wifi, Cpu, Users, Award } from 'lucide-react';
 
+const sponsorImages = [
+  {
+    name: '.xyz',
+    image: './assets/.xyz.png',
+    alt: '.xyz Domain Logo'
+  },
+  {
+    name: 'Devfolio',
+    image: './assets/Devfolio.png',
+    alt: 'Devfolio Logo'
+  },
+  {
+    name: 'Aptos',
+    image: './assets/aptos.png',
+    alt: 'Aptos Logo'
+  },
+  {
+    name: 'ContentStack',
+    image: './assets/contentstack.png',
+    alt: 'ContentStack Logo'
+  }
+];
+
 const AboutUs: React.FC = () => {
   return (
     <section id="about" className="py-16 md:py-24 bg-midnight text-center">
@@ -97,31 +120,36 @@ const AboutUs: React.FC = () => {
         </motion.div>
 
         {/* Sponsors */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  className="mt-16"
->
-  <h3 className="text-3xl font-bold text-primary mb-6">Past Sponsors</h3>
-  <p className="text-text/80 max-w-xl mx-auto mb-8">
-    Proudly supported by organizations shaping the future of tech and innovation.
-  </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mt-16"
+        >
+          <h3 className="text-3xl font-bold text-primary mb-6">Past Sponsors</h3>
+          <p className="text-text/80 max-w-xl mx-auto mb-8">
+            Proudly supported by organizations shaping the future of tech and innovation.
+          </p>
 
-  <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-    {['.xyz', 'Unstop', 'Devfolio', 'APTOS', 'ContentStack'].map((sponsor, idx) => (
-      <motion.div
-        key={sponsor}
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.4, delay: idx * 0.1 }}
-        className="bg-dark border border-glow/10 px-6 py-3 rounded-full text-white font-medium text-base shadow hover:shadow-lg transition-all"
-      >
-        {sponsor}
-      </motion.div>
-    ))}
-  </div>
-</motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center justify-items-center max-w-7xl mx-auto">
+            {sponsorImages.map((sponsor, idx) => (
+              <motion.div
+                key={sponsor.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="w-full max-w-[2000px] aspect-[3/2] relative group"
+              >
+                <div className="absolute inset-0 bg-dark/40 rounded-xl transition-all duration-300 group-hover:bg-dark/20" />
+                <img
+                  src={sponsor.image}
+                  alt={sponsor.alt}
+                  className="w-full h-full object-contain p-4 filter brightness-90 group-hover:brightness-100 transition-all duration-300"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
       </div>
     </section>

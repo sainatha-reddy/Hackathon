@@ -63,6 +63,22 @@ const Hero = () => {
           </p>
         </motion.div>
 
+        {/* Sponsor Us Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="mb-6 sm:mb-8"
+        >
+          <a
+            href="#sponsor"
+            className="inline-block px-8 py-3 rounded-full font-bold text-lg bg-cta text-white shadow-lg hover:bg-cta/80 transition-all duration-300 border-2 border-glow relative overflow-hidden group"
+          >
+            <span className="relative z-10">Sponsor Us</span>
+            <span className="absolute inset-0 rounded-full bg-glow opacity-20 blur-xl group-hover:opacity-40 transition-all duration-300" />
+          </a>
+        </motion.div>
+
         {/* Countdown Timer */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
